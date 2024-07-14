@@ -1,0 +1,31 @@
+﻿
+<!-- Views/Weather/Index.cshtml -->
+@model IEnumerable<WeatherAPI.Models.Weather>
+
+@{
+    ViewData["Title"] = "Weather Data";
+}
+
+<h1>Weather Data</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Last Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Country</td>
+                <td>@item.City</td>
+                <td>@item.Temperature</td>
+                <td>@item.LastUpdateTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
